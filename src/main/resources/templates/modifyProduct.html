@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 수정 페이지</title>
+</head>
+<body>
+<h1>상품 수정 페이지입니다.</h1>
+
+<form th:action="@{/modify/product/{id}(id=${oldProductInfo.productNo})}" th:object="${newProductInfo}" method="post">
+    ProductName : <input type="text" th:text="${oldProductInfo.productName}" th:field="*{productName}"/> <br>
+    ProductPrice : <input type="text" th:text="${oldProductInfo.salePrice}" th:field="*{salePrice}"/> <br>
+    <button type="submit">수정하기</button>
+</form>
+</body>
+</html>
