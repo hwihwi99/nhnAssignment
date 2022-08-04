@@ -4,16 +4,17 @@ import com.nhn.commerce.model.ModifyProduct
 import com.nhn.commerce.model.NewProduct
 import com.nhn.commerce.model.Product
 import com.nhn.commerce.service.ProductService
+import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
-import java.util.Optional
+
 
 @Controller
 class ProductController(
     private val productService: ProductService,
 ) {
-
+    private val log = LoggerFactory.getLogger(javaClass)
     @GetMapping("/")
     fun home():String{
         println("홈 컨트롤러 시작")
