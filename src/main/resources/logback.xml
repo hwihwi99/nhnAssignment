@@ -16,7 +16,7 @@
         <!-- Log & Crash Logback SDK의 LogNCrashHttpAppender 옵션 -->
         <appender name="logNCrashHttp" class="com.toast.java.logncrash.logback.LogNCrashHttpAppender">
             <param name="appKey" value="5MLxM4VEfH1ssjeZ" />
-            <param name="logSource" value=“quokka” />
+            <param name="logSource" value="quokka" />
             <param name="version" value="1.0.0" />
             <param name="debug" value="false" />
         </appender>
