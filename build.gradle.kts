@@ -17,6 +17,11 @@ repositories {
 }
 
 dependencies {
+	implementation("org.json:json:20171018")
+	implementation("org.apache.httpcomponents:httpclient:4.5")
+	implementation("ch.qos.logback:logback-classic:1.2.3")
+	implementation(files("lib/toast-logncrash-logback-sdk-3.0.5.jar"))
+
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
