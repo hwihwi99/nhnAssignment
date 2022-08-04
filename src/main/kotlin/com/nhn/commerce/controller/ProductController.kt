@@ -26,6 +26,7 @@ class ProductController(
     }
     @GetMapping("/product")
     fun getProductList(model: Model): String {
+        log.error("LogNCrash Error Test")
         model.addAttribute("productList", productService.findProductList())
         return "product"
     }
