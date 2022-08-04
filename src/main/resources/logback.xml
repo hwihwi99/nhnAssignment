@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- AsyncAppender로 되어있는 것을 확인 -->
+    <appender name="logncrash" class="ch.qos.logback.classic.AsyncAppender">
+
+        <!-- Logback의 AsyncAppender 옵션 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <param name="includeCallerData" value="false" />
+        <param name="queueSize" value="2048" />
+        <param name="neverBlock" value="true" />
+        <param name="maxFlushTime" value="60000" />
+
+        <!-- Log & Crash Logback SDK의 LogNCrashHttpAppender 옵션 -->
+        <appender name="logNCrashHttp" class="com.toast.java.logncrash.logback.LogNCrashHttpAppender">
+            <param name="appKey" value="5MLxM4VEfH1ssjeZ" />
+            <param name="logSource" value=“quokka” />
+            <param name="version" value="1.0.0" />
+            <param name="debug" value="false" />
+        </appender>
+    </appender>
+
+    <!-- root레벨 설정 -->
+    <root level="ERROR">
+        <appender-ref ref="logncrash" />
+    </root>
+</configuration>
